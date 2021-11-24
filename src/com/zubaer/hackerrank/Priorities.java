@@ -27,12 +27,13 @@ public class Priorities {
 	
 	
 	List<Student> getStudents(List<String> events){
+		List<Student> studentList = new ArrayList<Student>();
 		
-		PriorityQueue<Student> studentPriority= new PriorityQueue(new Checker());
+		PriorityQueue<Student> studentPriority= new PriorityQueue(events.size(),new Checker());
 		
 		for (String i : events) {
 			String[] eventsArray = i.split(" ");
-			System.out.println(eventsArray[0]);
+			//System.out.println(eventsArray[0]);
 			if(eventsArray.length > 1) {
 				//System.out.println(studentPriority);
 				String name = eventsArray[1];
@@ -43,11 +44,20 @@ public class Priorities {
 				//System.out.println(studentPriority);
 			}
 			if("SERVED".equals(eventsArray[0])) {
-				studentPriority.remove();
+				studentPriority.poll();
 				//System.out.println(studentPriority);
 			}
 		}
-		List<Student> studentList = new ArrayList<Student>(studentPriority);
+		  // remaining students
+        int n = studentPriority.size();
+        
+        for (int i = 0; i < n; i++) {
+            Student student = studentPriority.remove();
+             
+            // add to the list ****
+            studentList.add(student);
+        }
+		//List<Student> studentList = new ArrayList<Student>(studentPriority);
 		
 		return studentList;
 	}
