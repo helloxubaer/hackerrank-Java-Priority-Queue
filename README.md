@@ -12,9 +12,9 @@ The student having the highest Cumulative Grade Point Average (CGPA) is served f
 Any students having the same CGPA will be served by name in ascending case-sensitive alphabetical order.
 Any students having the same CGPA and name will be served in ascending order of the id.
 
-Solution:
-total 4 classers written
-Student class: student properties
-Checker class: implements comparator
-Priorities class: serves based on priorityy set in checket class
+## Solution:
+total 4 classers written\
+Student class: student properties\
+Checker class: implements comparator\
+Priorities class: serves based on priorityy set in checket class\
 Solution: print out un-serverd students
